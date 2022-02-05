@@ -227,13 +227,16 @@ section#about {
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content:space-around;
     align-items: center;
     height: 60px;
-    background-color: rgb (39, 49, 61);
+    background-color: rgba(255, 255, 255, 0);
     box-shadow: 2px 2px 15px rgba(8, 8, 8, 0.438);
-    padding: 0px 5px;
-
+    /* padding: 0px 5px; */
+    position:fixed !important ;
+    width: 100%;
+    z-index: 1000;
+    transition: all ease 0.5s;
 }
 
 nav ul {
@@ -258,14 +261,16 @@ nav ul li a {
 nav ul li a:hover {
     color: #40a6fc;
 }
-
+.logo-container{
+    display: flex;
+    align-items: center;
+}
 .logo {
     color: #4a4d4e;
     font-size: 25px;
     font-weight: 600;
-    transition: all 1s ease;
-    position: absolute;
-    left: 120px;
+    margin-left: 20px;
+    transition: all 0.7s ease;
 
 }
 
@@ -277,12 +282,9 @@ nav ul li a:hover {
 
 /* ini penggerak nya */
 img#icon {
-    position: absolute;
     width: 60px;
     height: 60px;
     z-index: 999;
-    margin-top: -30px;
-    margin-left: 25px;
 
 }
 
@@ -411,18 +413,6 @@ a#icon {
     color: #5e5a75;
 }
 
-/* .down-cv a{
-	background-color:#686569;
-	color:#b3b5b6;	
-	border:none;
-}
-.down-cv a:hover{
-	border-radius: 0%;
-	background-color:#3ab7ff;
-	color:rgb(51, 44, 44);	
-	border:none;
-	
-} */
 .down-cv {
 
     transition: all 1s ease;
@@ -695,13 +685,17 @@ button:active {
     color: white;
 }
 
-.portfolio-container {
+.container-myskills,
+.portfolio-container,
+.container-work-space {
     padding-top: 50px;
     height: auto;
     padding: 5% 10%;
 }
 
-.portfolio {
+.myskills,
+.portfolio,
+.work-space {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
@@ -711,12 +705,16 @@ button:active {
     flex-direction: row;
 }
 
-.portfolio-text {
+.myskills-text,
+.portfolio-text,
+.work-space-text {
     width: 500px;
     margin: 50px 0px;
 }
 
-.portfolio-text p:nth-child(1) {
+.myskills-text p:nth-child(1),
+.portfolio-text p:nth-child(1),
+.work-space-text p:nth-child(1) {
     font-family: calibri;
     font-weight: bold;
     color: #464242;
@@ -725,7 +723,9 @@ button:active {
 
 }
 
-.portfolio-text p:nth-child(2) {
+.myskills-text p:nth-child(2),
+.portfolio-text p:nth-child(2),
+.work-space-text p:nth-child(2) {
     font-family: calibri;
     color: #7e7d7d;
     font-size: 15px;
@@ -1216,22 +1216,43 @@ div.social {
 }
 
 @media(max-width:750px) {
-	.portfolio .p1, .portfolio .p3, .portfolio .p4, .portfolio .p5, .portfolio .p6{
-		width: 100%;
-	}
-	.portfolio .p3{
-		height: 245px;
-	}
-	.portfolio .p1,.portfolio .p4{
-		height: 215px;
+    .portfolio {
+        gap: 45px;
+    }
 
-	}
-	.portfolio .p5{
-		height: 220px;
-	}
+    .portfolio .p1,
+    .portfolio .p3,
+    .portfolio .p4,
+    .portfolio .p5,
+    .portfolio .p6 {
+        width: 100%;
+    }
+
+    .portfolio .p3 {
+        height: 245px;
+    }
+
+    .portfolio .p1,
+    .portfolio .p4 {
+        height: 215px;
+
+    }
+
+    .portfolio .p5 {
+        height: 220px;
+    }
+
     .portfolio .p2 {
         width: 200px;
         height: 420px;
+    }
+
+    .portfolio-container {
+        padding: 5% 2.5%;
+    }
+
+    .services {
+        padding: 2% 2.5% 0px 2.5%;
     }
 
     /* astronaut icon on bar  */

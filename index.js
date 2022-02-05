@@ -1,3 +1,4 @@
+// GSAP
 gsap.from('nav', {
   duration: 10,
   y: -100,
@@ -16,20 +17,41 @@ gsap.from('a.logo', {
   x: 200,
 });
 
-/*     Fullscreen btn     */
-        let fullscreen;
-        let fsEnter = document.getElementById('fullscr');
-        fsEnter.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (!fullscreen) {
-                fullscreen = true;
-                document.documentElement.requestFullscreen();
-            } else {
-                fullscreen = false;
-                document.exitFullscreen();
+/*Fullscreen btn*/
+let fullscreen;
+let fsEnter = document.getElementById('fullscr');
+fsEnter.addEventListener('click', function (e) {
+  e.preventDefault();
+  if (!fullscreen) {
+    fullscreen = true;
+    document.documentElement.requestFullscreen();
+  } else {
+    fullscreen = false;
+    document.exitFullscreen();
+  }
+});
 
-            }
-        });
+//Dark Mode
+function Darkmode() {
+  var element = document.getElementById('about');
+  element.classList.toggle('dark-mode');
 
+  var element = document.getElementById('darkbody');
+  element.classList.toggle('dark-mode-body');
 
- 
+  var element = document.getElementById('aboutcontent');
+  element.classList.toggle('about-content-dark');
+
+  var element = document.getElementById('services');
+  element.classList.toggle('services-dark');
+}
+
+// Sidebar Kanan
+function openRightMenu() {
+  document.getElementById('right').style.display = 'block';
+}
+
+function closeRightMenu() {
+  document.getElementById('right').style.display = 'none';
+}
+
